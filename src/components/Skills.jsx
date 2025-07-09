@@ -1,100 +1,115 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   CodeBracketIcon,
   ServerIcon,
   ShieldCheckIcon,
+  CubeIcon,
+  CpuChipIcon,
+  CommandLineIcon
 } from '@heroicons/react/24/outline';
 
 function Skills() {
+  const [animatedSkills, setAnimatedSkills] = useState([]);
+
   const skills = [
-    { name: 'React', level: 4, icon: CodeBracketIcon, category: 'frontend' },
-    { name: 'Vue.js', level: 3, icon: CodeBracketIcon, category: 'frontend' },
-    { name: 'Django', level: 4, icon: ServerIcon, category: 'backend' },
-    { name: 'Node.js', level: 3, icon: ServerIcon, category: 'backend' },
-    { name: '.NET', level: 3, icon: ServerIcon, category: 'backend' },
-    { name: 'Tailwind CSS', level: 5, icon: CodeBracketIcon, category: 'frontend' },
-    { name: 'MongoDB', level: 3, icon: ServerIcon, category: 'database' },
-    { name: 'PostgreSQL', level: 4, icon: ServerIcon, category: 'database' },
-    { name: 'Kali Linux', level: 3, icon: ShieldCheckIcon, category: 'security' },
-    { name: 'Burp Suite', level: 2, icon: ShieldCheckIcon, category: 'security' },
-    { name: 'OWASP Top 10', level: 3, icon: ShieldCheckIcon, category: 'security' },
+    { name: 'React', level: 4, icon: CodeBracketIcon, category: 'frontend', years: 3 },
+    { name: 'Vue.js', level: 3, icon: CodeBracketIcon, category: 'frontend', years: 2 },
+    { name: 'Django', level: 4, icon: ServerIcon, category: 'backend', years: 4 },
+    { name: 'Node.js', level: 3, icon: ServerIcon, category: 'backend', years: 3 },
+    { name: '.NET', level: 3, icon: CubeIcon, category: 'backend', years: 2 },
+    { name: 'Tailwind CSS', level: 4, icon: CommandLineIcon, category: 'frontend', years: 3 },
+    { name: 'MongoDB', level: 3, icon: CpuChipIcon, category: 'database', years: 3 },
+    { name: 'Mysql', level: 4, icon: CpuChipIcon, category: 'database', years: 4 },
   ];
 
+  useEffect(() => {
+    // Animate skills one by one
+    const timer = setTimeout(() => {
+      setAnimatedSkills(skills.map((_, i) => i));
+    }, 300);
+    return () => clearTimeout(timer);
+  }, []);
+
   const getCategoryColor = (category) => {
-    switch (category) {
-      case 'frontend': return 'bg-blue-500';
-      case 'backend': return 'bg-purple-500';
-      case 'database': return 'bg-green-500';
-      case 'security': return 'bg-red-500';
-      default: return 'bg-[#64FFDA]';
+    const colors = {
+      frontend: 'from-blue-500 to-blue-700',
+      backend: 'from-purple-500 to-purple-700',
+      database: 'from-green-500 to-green-700',
+      security: 'from-red-500 to-red-700'
+    };
+    return colors[category] || 'from-[#64FFDA] to-[#0A192F]';
+  };
+
+  const getCategoryIcon = (category) => {
+    switch(category) {
+      case 'frontend': return <CodeBracketIcon className="w-5 h-5"/>;
+      case 'backend': return <ServerIcon className="w-5 h-5"/>;
+      case 'database': return <CpuChipIcon className="w-5 h-5"/>;
+      case 'security': return <ShieldCheckIcon className="w-5 h-5"/>;
+      default: return <CommandLineIcon className="w-5 h-5"/>;
     }
   };
 
-  const mid = Math.ceil(skills.length / 2);
-  const leftSkills = skills.slice(0, mid);
-  const rightSkills = skills.slice(mid);
+  const proficiencyLevels = ['Beginner', 'Intermediate', 'Advanced', 'Expert', 'Master'];
 
   return (
-    <section id="skills" className="py-20 bg-[#F8F8F8] dark:bg-[#1A1A1A]">
-      <div className="container mx-auto px-6 max-w-5xl">
-        <div className="text-center mb-16">
+    <section id="skills" className="py-20 bg-[#F8F8F8] dark:bg-[#1A1A1A] relative overflow-hidden">
+      {/* Decorative elements */}
+      <div className="absolute top-0 left-0 w-32 h-32 bg-[#64FFDA]/10 rounded-full filter blur-3xl"></div>
+      <div className="absolute bottom-0 right-0 w-40 h-40 bg-[#64FFDA]/10 rounded-full filter blur-3xl"></div>
+
+      <div className="container mx-auto px-6 max-w-6xl relative z-10">
+        <div className="text-center mb-16" data-aos="fade-up">
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-[#0A192F] dark:text-[#64FFDA]">
-            Skills Proficiency
+            Technical Expertise
           </h2>
-          <div className="w-20 h-1 bg-[#64FFDA] mx-auto mb-4"></div>
-          <p className="text-lg text-gray-600 dark:text-gray-300">
-            Measured by practical experience and project implementation
+          <div className="w-20 h-1 bg-gradient-to-r from-[#64FFDA] to-[#0A192F] mx-auto mb-4"></div>
+          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+            My skillset spans across multiple domains, with proficiency measured by real-world project experience
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-          {[leftSkills, rightSkills].map((column, colIdx) => (
-            <div key={colIdx} className="space-y-10">
-              {column.map((skill, i) => (
-                <div key={i}>
-                  <div className="flex items-center justify-between mb-2">
-                    <div className="flex items-center">
-                      <skill.icon className={`w-5 h-5 mr-3 ${getCategoryColor(skill.category).replace('bg', 'text')}`} />
-                      <span className="font-medium text-gray-800 dark:text-gray-200">
-                        {skill.name}
-                      </span>
-                    </div>
-                    <span className="text-sm text-gray-500 dark:text-gray-400">
-                      {['Beginner', 'Intermediate', 'Advanced', 'Expert', 'Master'][skill.level - 1]}
-                    </span>
+        {/* Skills Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {skills.map((skill, i) => (
+            <div 
+              key={i}
+              className={`bg-white dark:bg-[#222222] p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border-l-4 ${getCategoryColor(skill.category).replace('from', 'border')}`}
+              data-aos="fade-up"
+              data-aos-delay={i * 100}
+            >
+              <div className="flex items-start justify-between mb-4">
+                <div className="flex items-center">
+                  <div className={`p-2 rounded-lg bg-gradient-to-br ${getCategoryColor(skill.category)} mr-4 text-white`}>
+                    {getCategoryIcon(skill.category)}
                   </div>
-                  <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
-                    <div
-                      className={`${getCategoryColor(skill.category)} h-2.5 rounded-full transition-all duration-1000 ease-out`}
-                      style={{ width: `${skill.level * 20}%` }}
-                    ></div>
+                  <div>
+                    <h3 className="font-bold text-lg text-gray-800 dark:text-gray-200">{skill.name}</h3>
+                    <p className="text-sm text-gray-500 dark:text-gray-400">{skill.years}+ years</p>
                   </div>
                 </div>
-              ))}
+                <span className="text-sm font-medium px-2 py-1 rounded bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200">
+                  {proficiencyLevels[skill.level - 1]}
+                </span>
+              </div>
+              
+              <div className="mb-2 flex justify-between text-xs text-gray-500 dark:text-gray-400">
+                <span>Proficiency</span>
+                <span>{skill.level * 20}%</span>
+              </div>
+              <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                <div
+                  className={`h-2 rounded-full bg-gradient-to-r ${getCategoryColor(skill.category)} transition-all duration-1000 ease-out`}
+                  style={{ 
+                    width: animatedSkills.includes(i) ? `${skill.level * 20}%` : '0%' 
+                  }}
+                ></div>
+              </div>
             </div>
           ))}
         </div>
 
-        <div className="mt-16 pt-8 border-t border-gray-200 dark:border-gray-700">
-          <div className="flex justify-center flex-wrap gap-6 text-sm text-gray-500 dark:text-gray-400">
-            <div className="flex items-center">
-              <span className="w-3 h-3 rounded-full bg-blue-500 mr-2"></span>
-              Frontend
-            </div>
-            <div className="flex items-center">
-              <span className="w-3 h-3 rounded-full bg-purple-500 mr-2"></span>
-              Backend
-            </div>
-            <div className="flex items-center">
-              <span className="w-3 h-3 rounded-full bg-green-500 mr-2"></span>
-              Database
-            </div>
-            <div className="flex items-center">
-              <span className="w-3 h-3 rounded-full bg-red-500 mr-2"></span>
-              Security
-            </div>
-          </div>
-        </div>
+        
       </div>
     </section>
   );
