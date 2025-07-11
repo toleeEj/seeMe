@@ -23,7 +23,7 @@ function Hero() {
       }}
     >
       {/* Dark overlay for clarity */}
-      <div className="absolute inset-0 bg-black/50 z-0" />
+      <div className="absolute inset-0 bg-black/80 z-0" />
 
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none z-10">

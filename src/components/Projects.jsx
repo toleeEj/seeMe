@@ -12,42 +12,42 @@ import {
 function Projects() {
   const projects = [
     {
-      title: 'Task Management App',
-      description: 'A modern web application for managing tasks with real-time updates, user authentication, and secure backend API.',
-      stack: ['React', 'Node.js', 'MongoDB', 'JWT'],
-      github: 'https://github.com/your-username/project-one',
+      title: 'Automated University Timetable Generator',
+      description: 'Automated University Timetable Generator is a smart scheduling system that ensures conflict-free timetables for all departments. It provides real-time notifications to students and teachers on any schedule updates. The platform also supports feedback from users and full administrative control for efficient management.',
+      stack: ['bootstrap', 'Django', 'Mysql', 'JWT'],
+      github: 'https://github.com/toleeEj/auto-timetable-generator.git',
       demo: 'https://project-one-demo.com',
       tags: ['Full-Stack', 'Web App', 'Authentication'],
-      image: '/images/project1.jpg',
+      image: '/assets/auto.jpg',
       featured: true
     },
     {
       title: 'E-Commerce Platform',
       description: 'Complete e-commerce solution with payment integration, product management, and responsive design.',
-      stack: ['Vue.js', 'Django', 'PostgreSQL', 'Stripe'],
-      github: 'https://github.com/your-username/project-two',
+      stack: ['bootsrap', 'dotNet', 'Mysql', 'Stripe'],
+      github: 'https://github.com/toleeEj/UR-e-market.git',
       demo: 'https://project-two-demo.com',
       tags: ['Full-Stack', 'E-Commerce', 'Payments'],
-      image: '/images/project2.jpg'
+      image: '/assets/emarket.jpg'
     },
     {
-      title: 'Security Dashboard',
-      description: 'Comprehensive security monitoring tool implementing OWASP Top 10 guidelines with vulnerability scanning.',
-      stack: ['React', 'Node.js', 'Kali Linux', 'OWASP'],
-      github: 'https://github.com/your-username/project-three',
+      title: 'Oromo Cultural Garments',
+      description: 'Oromo Cultural Garments is a web platform showcasing the rich tradition of Oromo attire, blending heritage with modern design. It celebrates identity through curated collections and cultural insights.',
+      stack: ['bootsrup', 'dotNet', ' html'],
+      github: 'https://github.com/toleeEj/F_web.git',
       demo: 'https://project-three-demo.com',
-      tags: ['Security', 'Dashboard', 'Monitoring'],
-      image: '/images/project3.jpg',
+      tags: ['Full-Stack', 'Dashboard'],
+      image: '/assets/fashin.jpg',
       featured: true
     },
     {
       title: 'Portfolio Website',
       description: 'Interactive portfolio website with smooth animations, dark mode, and responsive design.',
       stack: ['React', 'Tailwind CSS', 'Framer Motion'],
-      github: 'https://github.com/your-username/project-four',
+      github: 'https://github.com/toleeEj/seeMe.git',
       demo: 'https://project-four-demo.com',
       tags: ['Frontend', 'Portfolio', 'Animation'],
-      image: '/images/project4.jpg'
+      image: '/assets/personalw.jpg'
     },
   ];
 
@@ -181,7 +181,7 @@ function Projects() {
 
         <div className="text-center mt-12">
           <a
-            href="https://github.com/your-username"
+            href="https://github.com/toleeEj?tab=repositories"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center px-6 py-3 border border-[#64FFDA] text-[#64FFDA] rounded-lg hover:bg-[#64FFDA] hover:text-[#0A192F] transition-colors duration-300"
