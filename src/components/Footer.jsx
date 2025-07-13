@@ -11,13 +11,13 @@ function Footer() {
       <div className="container mx-auto px-4">
         <div className="flex flex-col items-center space-y-6 md:flex-row md:justify-between md:space-y-0">
           {/* Copyright Notice */}
-          <p className="text-sm">&copy; {new Date().getFullYear()} [Your Name]. All rights reserved.</p>
+          <p className="text-sm">&copy; {new Date().getFullYear()} tolee. All rights reserved.</p>
           
           {/* Social Media Icons */}
           <ul className="flex space-x-4">
             <li>
               <a
-                href="mailto:your.email@example.com"
+                href="mailto:tolesaejara@gmail.com"
                 className="text-[#64FFDA] hover:text-white transition-colors"
                 aria-label="Email"
               >
@@ -26,7 +26,7 @@ function Footer() {
             </li>
             <li>
               <a
-                href="https://www.linkedin.com/in/your-profile"
+                href="https://www.linkedin.com/in/tolesa-ijara/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[#64FFDA] hover:text-white transition-colors"
@@ -37,7 +37,7 @@ function Footer() {
             </li>
             <li>
               <a
-                href="https://github.com/your-username"
+                href="https://github.com/toleeEj"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[#64FFDA] hover:text-white transition-colors"

@@ -89,7 +89,7 @@ function Contact() {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="block w-full pl-10 pr-3 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-[#333333] focus:outline-none focus:ring-2 focus:ring-[#64FFDA] focus:border-transparent"
+                    className="block w-full pl-10 pr-3 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white text-blue-600 focus:outline-none focus:ring-2 focus:ring-[#64FFDA] focus:border-transparent"
                     placeholder="John Doe"
                   />
                 </div>
@@ -110,7 +110,7 @@ function Contact() {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="block w-full pl-10 pr-3 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-[#333333] focus:outline-none focus:ring-2 focus:ring-[#64FFDA] focus:border-transparent"
+                    className="block w-full pl-10 pr-3 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white text-blue-600 focus:outline-none focus:ring-2 focus:ring-[#64FFDA] focus:border-transparent"
                     placeholder="your.email@example.com"
                   />
                 </div>
@@ -127,7 +127,7 @@ function Contact() {
                   onChange={handleChange}
                   required
                   rows="5"
-                  className="block w-full px-3 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-[#333333] focus:outline-none focus:ring-2 focus:ring-[#64FFDA] focus:border-transparent"
+                  className="block w-full px-3 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white text-blue-600 focus:outline-none focus:ring-2 focus:ring-[#64FFDA] focus:border-transparent"
                   placeholder="Tell me about your project or inquiry..."
                 ></textarea>
               </div>
@@ -154,15 +154,18 @@ function Contact() {
               </button>
 
               {status.message && (
-                <div className={`mt-4 p-3 rounded-lg text-center ${
-                  status.type === 'success' 
-                    ? 'bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200' 
-                    : 'bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200'
-                }`}>
+                <div
+                  className={`mt-4 p-3 rounded-lg text-center ${
+                    status.type === 'success'
+                      ? 'bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200'
+                      : 'bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200'
+                  }`}
+                >
                   {status.message}
                 </div>
               )}
             </form>
+
           </div>
 
           {/* Contact Information */}
@@ -185,7 +188,7 @@ function Contact() {
                     href="mailto:your.email@example.com" 
                     className="text-lg font-medium text-[#0A192F] dark:text-white hover:text-[#64FFDA] transition-colors"
                   >
-                    your.email@example.com
+                    tolesaejara@gmail.com
                   </a>
                 </div>
               </div>
@@ -200,7 +203,7 @@ function Contact() {
                     href="tel:+1234567890" 
                     className="text-lg font-medium text-[#0A192F] dark:text-white hover:text-[#64FFDA] transition-colors"
                   >
-                    +1 (234) 567-890
+                    +251708744454
                   </a>
                 </div>
               </div>
@@ -212,7 +215,7 @@ function Contact() {
                 <div>
                   <h4 className="text-sm font-medium text-gray-500 dark:text-gray-400">Location</h4>
                   <p className="text-lg font-medium text-[#0A192F] dark:text-white">
-                    San Francisco, CA
+                    Addis Ababa
                   </p>
                 </div>
               </div>
@@ -221,10 +224,10 @@ function Contact() {
                 <h4 className="text-sm font-medium text-gray-500 dark:text-gray-400 mb-4">Connect With Me</h4>
                 <div className="flex space-x-4">
                   <a
-                    href="https://www.linkedin.com/in/your-profile"
+                    href="https://www.linkedin.com/in/tolesa-ijara/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-3 bg-gray-100 dark:bg-gray-700 rounded-lg hover:bg-[#64FFDA] hover:text-[#0A192F] transition-colors"
+                    className="p-3 bg-gray-100 dark:bg-gray-300 rounded-lg hover:bg-[#64FFDA] hover:text-[#0A192F] transition-colors"
                   >
                     <span className="sr-only">LinkedIn</span>
                     <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -232,10 +235,10 @@ function Contact() {
                     </svg>
                   </a>
                   <a
-                    href="https://github.com/your-username"
+                    href="https://github.com/toleeEj"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-3 bg-gray-100 dark:bg-gray-700 rounded-lg hover:bg-[#64FFDA] hover:text-[#0A192F] transition-colors"
+                    className="p-3 bg-gray-100 dark:bg-gray-300 rounded-lg hover:bg-[#64FFDA] hover:text-[#0A192F] transition-colors"
                   >
                     <span className="sr-only">GitHub</span>
                     <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -243,16 +246,17 @@ function Contact() {
                     </svg>
                   </a>
                   <a
-                    href="https://twitter.com/your-username"
+                    href="https://t.me/T011ii"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-3 bg-gray-100 dark:bg-gray-700 rounded-lg hover:bg-[#64FFDA] hover:text-[#0A192F] transition-colors"
+                    className="p-3 bg-gray-100 dark:bg-gray-300 rounded-lg hover:bg-[#64FFDA] hover:text-[#0A192F] transition-colors"
                   >
-                    <span className="sr-only">Twitter</span>
+                    <span className="sr-only">Telegram</span>
                     <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"/>
+                      <path d="M9.04 16.91c-.14 0-.28-.03-.41-.09l-1.46-.66c-.35-.16-.54-.53-.46-.91l.77-3.57 6.62-3.93c.15-.09.33-.09.48-.01s.25.23.25.4v.05l-1.6 7.26c-.05.24-.22.43-.45.51l-3.23 1.18c-.09.03-.17.05-.26.05zm-1.36-1.88l.77.35 2.35-.86 1.25-5.66-4.37 2.6-.61 2.81zm13.32-11.1c-.77-.74-1.85-1.13-3.09-1.13H6.09c-1.24 0-2.31.39-3.09 1.13C2.23 4.75 2 5.69 2 6.72v10.56c0 1.03.23 1.97.99 2.79.77.74 1.85 1.13 3.09 1.13h10.82c1.24 0 2.31-.39 3.09-1.13.76-.82.99-1.76.99-2.79V6.72c0-1.03-.23-1.97-.99-2.79z" />
                     </svg>
                   </a>
+
                 </div>
               </div>
             </div>
