@@ -19,7 +19,7 @@ function Hero() {
     <section
       className="relative min-h-screen flex items-center justify-center bg-cover bg-center text-[#1F1F1F] dark:text-[#F8F8F8] py-12 px-4 overflow-hidden"
       style={{
-        backgroundImage: "url('/assets/background.avif')",
+        backgroundImage: `url('${import.meta.env.BASE_URL}assets/background.avif')`,
       }}
     >
       {/* Dark overlay for clarity */}
@@ -59,7 +59,7 @@ function Hero() {
 
           <div className="flex flex-wrap gap-4 pt-4 w-full animate-fadeIn animation-delay-700">
             <a
-              href="/assets/cv.pdf"
+              href={`${import.meta.env.BASE_URL}assets/cv.pdf`}
               download
               className="relative bg-[#0A192F] text-[#64FFDA] px-8 py-3 rounded-lg hover:bg-[#64FFDA] hover:text-[#0A192F] transition-all duration-500 border-2 border-[#64FFDA] overflow-hidden group flex items-center hover:scale-105 active:scale-95"
             >
@@ -97,7 +97,7 @@ function Hero() {
             <div className="absolute inset-0 rounded-full bg-[#64FFDA]/10 blur-xl scale-90 group-hover:scale-100 transition-all duration-1000" />
             <div className="absolute inset-0 rounded-full border-[12px] border-[#64FFDA]/10 scale-95 group-hover:scale-105 transition-all duration-700" />
             <img
-              src="/assets/profile-placeholder.jpg"
+              src={`${import.meta.env.BASE_URL}assets/profile-placeholder.jpg`}
               alt="Profile"
               className="relative z-10 w-full h-full rounded-full object-cover border-[12px] border-[#032019] shadow-2xl transition-all duration-500 group-hover:scale-105"
             />

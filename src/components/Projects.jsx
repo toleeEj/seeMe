@@ -18,7 +18,7 @@ function Projects() {
       github: 'https://github.com/toleeEj/auto-timetable-generator.git',
       demo: 'https://project-one-demo.com',
       tags: ['Full-Stack', 'Web App', 'Authentication'],
-      image: '/assets/auto.jpg',
+      image: 'assets/auto.jpg',
       featured: true
     },
     {
@@ -28,7 +28,7 @@ function Projects() {
       github: 'https://github.com/toleeEj/UR-e-market.git',
       demo: 'https://project-two-demo.com',
       tags: ['Full-Stack', 'E-Commerce', 'Payments'],
-      image: '/assets/emarket.jpg'
+      image: 'assets/emarket.jpg'
     },
     {
       title: 'Oromo Cultural Garments',
@@ -37,7 +37,7 @@ function Projects() {
       github: 'https://github.com/toleeEj/F_web.git',
       demo: 'https://project-three-demo.com',
       tags: ['Full-Stack', 'Dashboard'],
-      image: '/assets/fashin.jpg',
+      image: 'assets/fashin.jpg',
       featured: true
     },
     {
@@ -47,7 +47,7 @@ function Projects() {
       github: 'https://github.com/toleeEj/seeMe.git',
       demo: 'https://project-four-demo.com',
       tags: ['Frontend', 'Portfolio', 'Animation'],
-      image: '/assets/personalw.jpg'
+      image: 'assets/personalw.jpg'
     },
   ];
 
@@ -114,7 +114,7 @@ function Projects() {
               {/* Project Image */}
               <div className="relative h-64 overflow-hidden">
                 <img
-                  src={project.image}
+                  src={`${import.meta.env.BASE_URL}${project.image}`}
                   alt={project.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />

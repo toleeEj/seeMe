@@ -1,7 +1,6 @@
 import React from 'react';
 
 function About() {
-
   return (
     <section
       id="about"
@@ -17,7 +16,7 @@ function About() {
           <div className="lg:w-1/3 flex justify-center" data-aos="fade-right">
             <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-xl overflow-hidden group">
               <img
-                src="/assets/about.jpg" 
+                src={`${import.meta.env.BASE_URL}assets/about.jpg`} 
                 alt="About Me"
                 className="w-full h-full object-cover transform group-hover:scale-105 transition duration-500"
               />
@@ -37,7 +36,6 @@ function About() {
               <p className="text-lg md:text-xl leading-relaxed">
                 Hi, I'm <span className="text-[#64FFDA] font-medium">Tolesa Ijara</span>, a passionate Full Stack Developer and Junior Penetration Tester. I love building seamless, user-friendly web applications and securing them against vulnerabilities.
               </p>
-      
             </div>
           </div>
         </div>
