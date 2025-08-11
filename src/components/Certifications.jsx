@@ -16,7 +16,7 @@ function Certifications() {
         date: '2024',
         icon: AcademicCapIcon,
         credential: 'View Degree Certificate',
-        link: '/assets/mydoc.jpg', // This will be accessible on click
+        link: 'https://drive.google.com/file/d/1G_VlhBmV79fRqnzje95wxZkTocsLFprw/view?usp=sharing', 
         tags: ['Education', '5-Year Program']
     },
     {
@@ -48,7 +48,7 @@ function Certifications() {
     },
     {
       title: 'Full Stack Web Development',
-      issuer: 'Code Academy',
+      issuer: 'freeCodeCamp',
       date: '2022',
       icon: CodeBracketIcon,
       credential: 'View Certificate',
@@ -68,13 +68,31 @@ function Certifications() {
       'Web Development': 'bg-pink-100 dark:bg-pink-900 text-pink-800 dark:text-pink-200',
       'Bootcamp': 'bg-cyan-100 dark:bg-cyan-900 text-cyan-800 dark:text-cyan-200',
       'Penetration Testing': 'bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-200',
-      '4 Years': 'bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200'
+      '5-Year Program': 'bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200'
     };
     return tagColors[tag] || 'bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200';
   };
 
   return (
-    <section id="certifications" className="py-20 bg-[#F8F8F8] dark:bg-[#1A1A1A] relative overflow-hidden">
+    <section
+      id="certifications"
+      className="py-20 relative overflow-hidden"
+      style={{
+        background: `
+          linear-gradient(90deg, rgba(0,100,0,0.95) 0%, rgba(35,0,0,0.95) 100%),
+          repeating-linear-gradient(
+            45deg,
+            rgba(255,255,255,0.06) 0px,
+            rgba(255,255,255,0.06) 1px,
+            transparent 1px,
+            transparent 50px
+          )
+        `,
+        backgroundSize: '100% 100%, 20px 20px',
+        backgroundBlendMode: 'overlay',
+        transition: 'background 0.8s ease-in-out'
+      }}
+    >
       {/* Decorative elements */}
       <div className="absolute top-0 left-0 w-32 h-32 bg-[#64FFDA]/10 rounded-full filter blur-3xl"></div>
       <div className="absolute bottom-0 right-0 w-40 h-40 bg-[#64FFDA]/10 rounded-full filter blur-3xl"></div>
@@ -85,7 +103,7 @@ function Certifications() {
             Education & Certifications
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-[#64FFDA] to-[#0A192F] mx-auto mb-4"></div>
-          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-100 dark:text-gray-200 max-w-2xl mx-auto">
             My academic background and professional certifications in cybersecurity and development
           </p>
         </div>
@@ -94,7 +112,7 @@ function Certifications() {
           {certifications.map((cert, index) => (
             <div
               key={index}
-              className="group relative bg-white dark:bg-[#222222] rounded-xl shadow-md hover:shadow-lg overflow-hidden transition-all duration-300 border-l-4 border-[#64FFDA]"
+              className="group relative bg-white/90 dark:bg-[#222222]/90 rounded-xl shadow-md hover:shadow-lg overflow-hidden transition-all duration-300 border-l-4 border-[#64FFDA]"
               data-aos="fade-up"
               data-aos-delay={index * 100}
             >

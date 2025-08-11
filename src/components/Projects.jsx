@@ -1,7 +1,6 @@
 import React from 'react';
 import { 
   CodeBracketIcon, 
-  EyeIcon,
   ArrowTopRightOnSquareIcon,
   LinkIcon,
   ShieldCheckIcon,
@@ -16,7 +15,6 @@ function Projects() {
       description: 'Automated University Timetable Generator is a smart scheduling system that ensures conflict-free timetables for all departments. It provides real-time notifications to students and teachers on any schedule updates. The platform also supports feedback from users and full administrative control for efficient management.',
       stack: ['bootstrap', 'Django', 'Mysql', 'JWT'],
       github: 'https://github.com/toleeEj/auto-timetable-generator.git',
-      demo: 'https://project-one-demo.com',
       tags: ['Full-Stack', 'Web App', 'Authentication'],
       image: 'assets/auto.jpg',
       featured: true
@@ -24,18 +22,16 @@ function Projects() {
     {
       title: 'E-Commerce Platform',
       description: 'Complete e-commerce solution with payment integration, product management, and responsive design.',
-      stack: ['bootsrap', 'dotNet', 'Mysql', 'Stripe'],
+      stack: ['bootstrap', 'dotNet', 'Mysql', 'Stripe'],
       github: 'https://github.com/toleeEj/UR-e-market.git',
-      demo: 'https://project-two-demo.com',
       tags: ['Full-Stack', 'E-Commerce', 'Payments'],
       image: 'assets/emarket.jpg'
     },
     {
       title: 'Oromo Cultural Garments',
       description: 'Oromo Cultural Garments is a web platform showcasing the rich tradition of Oromo attire, blending heritage with modern design. It celebrates identity through curated collections and cultural insights.',
-      stack: ['bootsrup', 'dotNet', ' html'],
+      stack: ['bootstrap', 'dotNet', 'html'],
       github: 'https://github.com/toleeEj/F_web.git',
-      demo: 'https://project-three-demo.com',
       tags: ['Full-Stack', 'Dashboard'],
       image: 'assets/fashin.jpg',
       featured: true
@@ -45,7 +41,6 @@ function Projects() {
       description: 'Interactive portfolio website with smooth animations, dark mode, and responsive design.',
       stack: ['React', 'Tailwind CSS', 'Framer Motion'],
       github: 'https://github.com/toleeEj/seeMe.git',
-      demo: 'https://project-four-demo.com',
       tags: ['Frontend', 'Portfolio', 'Animation'],
       image: 'assets/personalw.jpg'
     },
@@ -87,38 +82,46 @@ function Projects() {
   };
 
   return (
-    <section id="projects" className="py-20 bg-[#F8F8F8] dark:bg-[#1A1A1A] relative overflow-hidden">
-      {/* Decorative elements */}
-      <div className="absolute top-0 left-0 w-32 h-32 bg-[#64FFDA]/10 rounded-full filter blur-3xl"></div>
-      <div className="absolute bottom-0 right-0 w-40 h-40 bg-[#64FFDA]/10 rounded-full filter blur-3xl"></div>
+    <section id="projects" className="relative overflow-hidden min-h-screen">
+      {/* Smooth vertical gradient background */}
+      <div
+        className="absolute inset-0"
+        style={{
+          background: 'linear-gradient(90deg, rgba(0, 100, 0, 0.95) 0%, rgba(35, 0, 0, 0.95) 100%)',
+        }}
+      ></div>
 
-      <div className="container mx-auto px-4 relative z-10">
+      {/* Content wrapper */}
+      <div className="relative container mx-auto px-4 py-20 max-w-7xl z-10">
+        {/* Section Header */}
         <div className="text-center mb-16" data-aos="fade-up">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-[#0A192F] dark:text-[#64FFDA]">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white drop-shadow-lg">
             Featured Projects
           </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-[#64FFDA] to-[#0A192F] mx-auto mb-4"></div>
-          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          <div className="w-20 h-1 bg-gradient-to-r from-green-400 to-red-400 mx-auto mb-4 rounded"></div>
+          <p className="text-lg text-green-100 max-w-2xl mx-auto">
             A selection of my recent work showcasing full-stack development and security expertise
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        {/* Projects Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {projects.map((project, index) => (
             <div
               key={index}
-              className={`relative group overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 ${project.featured ? 'lg:col-span-2' : ''}`}
+              className={`relative group overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 bg-white bg-opacity-90 dark:bg-gray-900 dark:bg-opacity-80
+                ${project.featured ? 'lg:col-span-2' : ''}`}
               data-aos="fade-up"
               data-aos-delay={index * 100}
             >
               {/* Project Image */}
-              <div className="relative h-64 overflow-hidden">
+              <div className="relative h-64 overflow-hidden rounded-t-xl">
                 <img
                   src={`${import.meta.env.BASE_URL}${project.image}`}
                   alt={project.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6 rounded-t-xl">
                   <div>
                     <h3 className="text-2xl font-bold text-white mb-2">{project.title}</h3>
                     <p className="text-gray-200">{project.description}</p>
@@ -127,7 +130,7 @@ function Projects() {
               </div>
 
               {/* Project Content */}
-              <div className="bg-white dark:bg-[#222222] p-6">
+              <div className="p-6">
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.tags.map((tag) => (
                     <span
@@ -140,12 +143,12 @@ function Projects() {
                 </div>
 
                 <div className="mb-4">
-                  <h4 className="text-sm font-medium text-gray-500 dark:text-gray-400 mb-2">Tech Stack:</h4>
+                  <h4 className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Tech Stack:</h4>
                   <div className="flex flex-wrap gap-2">
                     {project.stack.map((tech) => (
                       <div
                         key={tech}
-                        className="flex items-center text-xs px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-full"
+                        className="flex items-center text-xs px-3 py-1 bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-gray-200 rounded-full"
                       >
                         {getTechIcon(tech)}
                         {tech}
@@ -159,19 +162,10 @@ function Projects() {
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center text-sm font-medium text-[#0A192F] dark:text-[#64FFDA] hover:text-[#64FFDA] dark:hover:text-white transition-colors"
+                    className="flex items-center text-sm font-medium text-green-800 dark:text-green-400 hover:text-green-600 dark:hover:text-green-300 transition-colors"
                   >
                     <CodeBracketIcon className="w-4 h-4 mr-2" />
                     View Code
-                  </a>
-                  <a
-                    href={project.demo}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center text-sm font-medium text-[#0A192F] dark:text-[#64FFDA] hover:text-[#64FFDA] dark:hover:text-white transition-colors"
-                  >
-                    <EyeIcon className="w-4 h-4 mr-2" />
-                    Live Demo
                   </a>
                 </div>
               </div>
@@ -179,12 +173,13 @@ function Projects() {
           ))}
         </div>
 
+        {/* Link to all GitHub projects */}
         <div className="text-center mt-12">
           <a
             href="https://github.com/toleeEj?tab=repositories"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center px-6 py-3 border border-[#64FFDA] text-[#64FFDA] rounded-lg hover:bg-[#64FFDA] hover:text-[#0A192F] transition-colors duration-300"
+            className="inline-flex items-center px-6 py-3 border border-green-400 text-green-400 rounded-lg hover:bg-green-400 hover:text-white transition-colors duration-300"
           >
             <ArrowTopRightOnSquareIcon className="w-5 h-5 mr-2" />
             View All Projects on GitHub

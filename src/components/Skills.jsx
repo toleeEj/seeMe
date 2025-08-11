@@ -23,7 +23,6 @@ function Skills() {
   ];
 
   useEffect(() => {
-    // Animate skills one by one
     const timer = setTimeout(() => {
       setAnimatedSkills(skills.map((_, i) => i));
     }, 300);
@@ -53,7 +52,25 @@ function Skills() {
   const proficiencyLevels = ['Beginner', 'Intermediate', 'Advanced', 'Expert', 'Master'];
 
   return (
-    <section id="skills" className="py-20 bg-[#F8F8F8] dark:bg-[#1A1A1A] relative overflow-hidden">
+    <section
+      id="skills"
+      className="py-20 relative overflow-hidden"
+      style={{
+        background: `
+          linear-gradient(90deg, rgba(50,0,0,0.95) 0%, rgba(10,105,0,0.95) 100%),
+          repeating-linear-gradient(
+            45deg,
+            rgba(255,255,255,0.06) 0px,
+            rgba(255,255,255,0.06) 1px,
+            transparent 1px,
+            transparent 50px
+          )
+        `,
+        backgroundSize: '100% 100%, 20px 20px',
+        backgroundBlendMode: 'overlay',
+        transition: 'background 0.8s ease-in-out'
+      }}
+    >
       {/* Decorative elements */}
       <div className="absolute top-0 left-0 w-32 h-32 bg-[#64FFDA]/10 rounded-full filter blur-3xl"></div>
       <div className="absolute bottom-0 right-0 w-40 h-40 bg-[#64FFDA]/10 rounded-full filter blur-3xl"></div>
@@ -64,7 +81,7 @@ function Skills() {
             Technical Expertise
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-[#64FFDA] to-[#0A192F] mx-auto mb-4"></div>
-          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-100 dark:text-gray-200 max-w-2xl mx-auto">
             My skillset spans across multiple domains, with proficiency measured by real-world project experience
           </p>
         </div>
@@ -74,7 +91,7 @@ function Skills() {
           {skills.map((skill, i) => (
             <div 
               key={i}
-              className={`bg-white dark:bg-[#222222] p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border-l-4 ${getCategoryColor(skill.category).replace('from', 'border')}`}
+              className={`bg-white/90 dark:bg-[#222222]/90 p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border-l-4 ${getCategoryColor(skill.category).replace('from', 'border')}`}
               data-aos="fade-up"
               data-aos-delay={i * 100}
             >
@@ -109,7 +126,6 @@ function Skills() {
           ))}
         </div>
 
-        
       </div>
     </section>
   );

@@ -1,19 +1,18 @@
-
-/* src/index.css */
 @import 'tailwindcss';
 
-/* Define dark mode styles */
-.dark {
-  --bg-color: #1F1F1F; /* Dark Gray for text in light mode, used as background in dark mode */
-  --text-color: #F8F8F8; /* Light Gray for background in light mode, used as text in dark mode */
+/* Theme Variables */
+:root {
+  --bg-color: #F8F8F8;
+  --text-color: #1F1F1F;
+}
+
+html.dark {
+  --bg-color: #1F1F1F;
+  --text-color: #F8F8F8;
 }
 
 body {
-  background-color: #F8F8F8; /* Light Gray */
-  color: #1F1F1F; /* Dark Gray */
-}
-
-.dark body {
   background-color: var(--bg-color);
   color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
 }

@@ -4,17 +4,32 @@ function About() {
   return (
     <section
       id="about"
-      className="py-20 bg-[#F8F8F8] dark:bg-[#1F1F1F] text-[#1F1F1F] dark:text-[#F8F8F8] relative overflow-hidden"
+      className="py-20 relative overflow-hidden text-[#1F1F1F] dark:text-[#F8F8F8]"
+      style={{
+        background: `
+          linear-gradient(90deg, rgba(0,100,0,0.95) 0%, rgba(35,0,0,0.95) 100%),
+          repeating-linear-gradient(
+            45deg,
+            rgba(255,255,255,0.06) 0px,
+            rgba(255,255,255,0.06) 1px,
+            transparent 1px,
+            transparent 50px
+          )
+        `,
+        backgroundSize: '100% 100%, 20px 20px',
+        backgroundBlendMode: 'overlay',
+        transition: 'background 0.8s ease-in-out'
+      }}
     >
       {/* Decorative elements */}
       <div className="absolute top-0 left-0 w-32 h-32 bg-[#64FFDA]/10 rounded-full filter blur-3xl"></div>
       <div className="absolute bottom-0 right-0 w-40 h-40 bg-[#64FFDA]/10 rounded-full filter blur-3xl"></div>
 
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 relative z-10">
         <div className="flex flex-col lg:flex-row items-center gap-12">
           {/* Image Section */}
           <div className="lg:w-1/3 flex justify-center" data-aos="fade-right">
-            <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-xl overflow-hidden group">
+            <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-xl overflow-hidden group shadow-lg">
               <img
                 src={`${import.meta.env.BASE_URL}assets/about.jpg`} 
                 alt="About Me"

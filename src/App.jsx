@@ -1,5 +1,5 @@
 // src/App.jsx
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -10,9 +10,26 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 
 function App() {
+  const [darkMode, setDarkMode] = useState(() => {
+    // Check local storage or user preference
+    return localStorage.getItem('darkMode') === 'true' || 
+           (window.matchMedia('(prefers-color-scheme: dark)').matches && 
+            localStorage.getItem('darkMode') !== 'false');
+  });
+
+  useEffect(() => {
+    if (darkMode) {
+      document.documentElement.classList.add('dark');
+      localStorage.setItem('darkMode', 'true');
+    } else {
+      document.documentElement.classList.remove('dark');
+      localStorage.setItem('darkMode', 'false');
+    }
+  }, [darkMode]);
+
   return (
-    <div className="min-h-screen">
-      <Navbar />
+    <div className="min-h-screen dark:bg-gray-900 dark:text-gray-100">
+      <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
       <main>
         <section id="home">
           <Hero />
