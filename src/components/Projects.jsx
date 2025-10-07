@@ -11,6 +11,15 @@ import {
 function Projects() {
   const projects = [
     {
+      title: 'Hirpaa Furniture Web',
+      description: 'A modern, user-friendly online platform designed for Hirpaa Furniture, enabling customers to browse and order furniture while allowing admins to manage products and customer interactions. The web app features a responsive design with multilingual support (English, Amharic, Oromo), integrating Supabase for data management and Tailwind CSS for a sleek, customizable interface.',
+      stack: ['React', 'Tailwind CSS', 'Framer Motion', 'Supabase'],
+      github: 'https://github.com/toleeEj/hirpaa-furniture',
+      tags: ['Frontend', 'furniture', 'supabase'],
+      image: 'assets/hirph.png',
+      featured: true
+    },
+    {
       title: 'Automated University Timetable Generator',
       description: 'Automated University Timetable Generator is a smart scheduling system that ensures conflict-free timetables for all departments. It provides real-time notifications to students and teachers on any schedule updates. The platform also supports feedback from users and full administrative control for efficient management.',
       stack: ['bootstrap', 'Django', 'Mysql', 'JWT'],
@@ -28,6 +37,14 @@ function Projects() {
       image: 'assets/emarket.jpg'
     },
     {
+      title: 'Portfolio Website',
+      description: 'Interactive portfolio website with smooth animations, dark mode, and responsive design.',
+      stack: ['React', 'Tailwind CSS', 'Framer Motion'],
+      github: 'https://github.com/toleeEj/seeMe.git',
+      tags: ['Frontend', 'Portfolio', 'Animation'],
+      image: 'assets/personalw.jpg'
+    },
+    {
       title: 'Oromo Cultural Garments',
       description: 'Oromo Cultural Garments is a web platform showcasing the rich tradition of Oromo attire, blending heritage with modern design. It celebrates identity through curated collections and cultural insights.',
       stack: ['bootstrap', 'dotNet', 'html'],
@@ -36,14 +53,7 @@ function Projects() {
       image: 'assets/fashin.jpg',
       featured: true
     },
-    {
-      title: 'Portfolio Website',
-      description: 'Interactive portfolio website with smooth animations, dark mode, and responsive design.',
-      stack: ['React', 'Tailwind CSS', 'Framer Motion'],
-      github: 'https://github.com/toleeEj/seeMe.git',
-      tags: ['Frontend', 'Portfolio', 'Animation'],
-      image: 'assets/personalw.jpg'
-    },
+    
   ];
 
   const getTagColor = (tag) => {
