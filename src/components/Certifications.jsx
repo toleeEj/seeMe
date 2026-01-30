@@ -55,6 +55,15 @@ function Certifications() {
       link: '#',
       tags: ['Web Development', 'Bootcamp']
     },
+    {
+        title: 'Fortinet Certified Associate Cybersecurity',
+        issuer: 'Fortinet',
+        date: '2025',
+        icon: AcademicCapIcon,
+        credential: 'View Certificate',
+        link: 'https://www.credly.com/badges/4f9e9049-83f6-49ed-891a-0acd93c68121', 
+        tags: ['Cybersecurity', 'Fortinet']
+    },
   ];
 
   const getTagColor = (tag) => {

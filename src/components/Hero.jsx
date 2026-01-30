@@ -97,7 +97,7 @@ function Hero() {
             <div className="absolute inset-0 rounded-full bg-[#64FFDA]/10 blur-xl scale-90 group-hover:scale-100 transition-all duration-1000" />
             <div className="absolute inset-0 rounded-full border-[12px] border-[#64FFDA]/10 scale-95 group-hover:scale-105 transition-all duration-700" />
             <img
-              src={`${import.meta.env.BASE_URL}assets/profile-placeholder.jpg`}
+              src={`${import.meta.env.BASE_URL}assets/mine.jpg`}
               alt="Profile"
               className="relative z-10 w-full h-full rounded-full object-cover border-[12px] border-[#032019] shadow-2xl transition-all duration-500 group-hover:scale-105"
             />
