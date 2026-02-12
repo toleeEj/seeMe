@@ -12,13 +12,14 @@ function Skills() {
   const [animatedSkills, setAnimatedSkills] = useState([]);
 
   const skills = [
-    { name: 'React', level: 4.5, icon: CodeBracketIcon, category: 'frontend', years: 1 },
-    { name: 'Next.js', level: 4, icon: CodeBracketIcon, category: 'frontend', years: 1 },
-    { name: 'Tailwind CSS', level: 4.5, icon: CommandLineIcon, category: 'frontend', years: 1 },
-    { name: 'Django', level: 4.5, icon: ServerIcon, category: 'backend', years: 2 },
-    { name: 'Node.js', level: 4, icon: ServerIcon, category: 'backend', years: 1 },
-    { name: 'supabase', level: 4.5, icon: CpuChipIcon, category: 'database', years: 2 },
-    { name: 'Mysql', level: 4, icon: CpuChipIcon, category: 'database', years: 2 },
+    { name: 'React', level: 4, icon: CodeBracketIcon, category: 'frontend', years: 1 },
+    { name: 'Next.js', level: 3, icon: CodeBracketIcon, category: 'frontend', years: 1 },
+    { name: 'Tailwind CSS', level: 4, icon: CommandLineIcon, category: 'frontend', years: 1 },
+    { name: 'Django', level: 4, icon: ServerIcon, category: 'backend', years: 2 },
+    { name: 'Node.js', level: 3, icon: ServerIcon, category: 'backend', years: 1 },
+    { name: 'postgresql', level: 3, icon: CpuChipIcon, category: 'database', years: 2 },
+    { name: 'supabase', level: 3, icon: CpuChipIcon, category: 'database', years: 2 },
+    { name: 'Mysql', level: 3, icon: CpuChipIcon, category: 'database', years: 2 },
   ];
 
   useEffect(() => {
@@ -51,6 +52,10 @@ function Skills() {
   const proficiencyLevels = ['Beginner', 'Intermediate', 'Advanced', 'Expert', 'Master'];
 
   return (
+
+
+
+
     <section
       id="skills"
       className="py-20 relative overflow-hidden"
